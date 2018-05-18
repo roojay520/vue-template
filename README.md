@@ -1,4 +1,4 @@
-# ape-plan
+# vue-template
 
 > 一个包含 eslint + sass + elementui + axios 的基础开发模板。
 
