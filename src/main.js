@@ -1,7 +1,8 @@
 import 'normalize.css';
 import '@/assets/icons';
-import { Form, FormItem, Button } from 'element-ui';
+import '@/assets/scss/element';
 import Vue from 'vue';
+import { Form, FormItem, Button } from 'element-ui';
 import App from './App';
 import router from './router';
 import store from './store';
