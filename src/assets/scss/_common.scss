@@ -1,0 +1,13 @@
+.content-wrap {
+  padding: .5em;
+  background-color: $clr-white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.text {
+  color: $clr-black;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: distribute;
+  text-align-last: initial;
+}

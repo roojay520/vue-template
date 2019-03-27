@@ -6,8 +6,9 @@ import Cookie from 'js-cookie';
  * @param {*} tokenValue 存入的 value
  * @param {*} minute 存入的失效时间， 单位为分钟，默认失效时间为 30 分钟
  */
-export const setToken = (tokenKey, tokenValue, minute = 30) =>
-  Cookie.set(tokenKey, tokenValue, { expires: (minute / 24 / 60) });
+
+// eslint-disable-next-line max-len
+export const setToken = (tokenKey, tokenValue, minute = 30) => Cookie.set(tokenKey, tokenValue, { expires: (minute / 24 / 60) });
 
 /**
  * 获取 cookie 里面的 value

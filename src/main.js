@@ -1,22 +1,18 @@
 import 'normalize.css';
-import '@/assets/icons';
-import '@/assets/scss/element';
+import 'core-js/stable';
 import Vue from 'vue';
-import { Form, FormItem, Button } from 'element-ui';
-import App from './App';
+import App from './App.vue';
 import router from './router';
 import store from './store';
+import i18n from '@/libs/i18n';
+import '@/libs/elementui';
+import '@/assets/scss/index.scss';
 
-Vue.use(Form);
-Vue.use(FormItem);
-Vue.use(Button);
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
   store,
-  components: { App },
-  template: '<App/>',
-});
+  i18n,
+  render: h => h(App),
+}).$mount('#app');

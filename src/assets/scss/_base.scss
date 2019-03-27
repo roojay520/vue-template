@@ -1,0 +1,40 @@
+html,
+body,
+#app,
+.wrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  font-size: 16px;
+  color: $clr-black;
+  background-color: $clr-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 设置滚动条的样式 */
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 8px;
+  background: hsla(220, 4%, 58%, .1);
+}
+
+/* 滚动槽 */
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+/* 滚动条滑块 */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: hsla(220, 4%, 58%, .3);
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: hsla(220, 4%, 58%, .5);
+  }
+}
