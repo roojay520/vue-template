@@ -1,6 +1,7 @@
 <template>
   <section>
-    <VChart :options="options" id="vchart" />
+    <el-button type="primary" @click="toggleChart">切换图表</el-button>
+    <VChart :options="options" id="vchart" :autoDraw="draw"/>
   </section>
 </template>
 
@@ -13,6 +14,7 @@ export default {
   },
   data() {
     return {
+      draw: true,
       options: {
         tooltip: {
           trigger: 'axis',
@@ -129,6 +131,11 @@ export default {
         ],
       },
     };
+  },
+  methods: {
+    toggleChart() {
+      this.draw = !this.draw;
+    },
   },
 };
 </script>

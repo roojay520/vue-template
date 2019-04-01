@@ -6,7 +6,14 @@
 
 <script>
 export default {
-
+  mounted() {
+    this.removeLoading();
+  },
+  methods: {
+    removeLoading() {
+      document.body.removeChild(document.getElementById('Loading'));
+    },
+  },
 };
 </script>
 

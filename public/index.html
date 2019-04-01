@@ -1,19 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vue-tpl</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vue-tpl doesn't work properly without JavaScript enabled.
-        Please enable it to continue.
-      </strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>vue-tpl</title>
+  <style type="text/css">
+    #Loading {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+      z-index: 100;
+    }
+
+    @-webkit-keyframes ball-beat {
+      50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ball-beat {
+      50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    .ball-beat>div {
+      width: 20px;
+      height: 20px;
+      border-radius: 100% !important;
+      margin: 2px;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      display: inline-block;
+      -webkit-animation: ball-beat 0.7s 0s infinite linear;
+      animation: ball-beat 0.7s 0s infinite linear;
+    }
+
+    .ball-beat>div:nth-child(2n-1) {
+      -webkit-animation-delay: 0.35s !important;
+      animation-delay: 0.35s !important;
+    }
+
+    .ball-beat>div:nth-child(1) {
+      background-color: #4285f4;
+    }
+
+    .ball-beat>div:nth-child(2) {
+      background-color:#ea4335;
+    }
+
+    .ball-beat>div:nth-child(3) {
+      background-color: #34a853;
+    }
+
+    .ball-beat>div:nth-child(4) {
+      background-color: #fbbc05;
+    }
+  </style>
+</head>
+<body>
+  <div id="Loading">
+    <div class="loader-inner ball-beat">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <noscript>
+    <strong>We're sorry but vue-tpl doesn't work properly without JavaScript enabled.
+      Please enable it to continue.
+    </strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

@@ -1,4 +1,5 @@
 const CompressionPlugin = require('compression-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   // 部署应用包时的基本 URL
@@ -10,6 +11,8 @@ module.exports = {
   // 静态资源(js, css, img 等)路径
   assetsDir: '',
   productionSourceMap: false,
+
+  // css 配置
   css: {
     // css 分离
     extract: true,
@@ -21,6 +24,12 @@ module.exports = {
       },
     },
   },
+
+  chainWebpack: (config) => {
+    // 移除 prefetch 插件
+    config.plugins.delete('prefetch');
+  },
+
   // webpack 配置
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
@@ -29,10 +38,11 @@ module.exports = {
           // 去掉 size limit(244kb) 警告
           hints: false,
         },
+
         optimization: {
           // 代码拆分
           splitChunks: {
-            minSize: 100000,
+            minSize: 50000,
             maxSize: 250000,
           },
         },
@@ -45,13 +55,20 @@ module.exports = {
             // 是否删除未压缩的原版本文件
             deleteOriginalAssets: false,
           }),
+          // lodash 按需引入
+          new LodashModuleReplacementPlugin(),
         ],
       };
     }
+    return {
+      devtool: 'source-map',
+    };
   },
+
+  // 开发服务器配置
   devServer: {
-    open: true,
-    host: 'localhost',
+    open: false,
+    // host: 'localhost',
     port: 4399,
     https: false,
     hotOnly: false,
