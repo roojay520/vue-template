@@ -12,7 +12,7 @@ const dateTimeFormats = {
       minute: 'numeric',
     },
   },
-  'zh-CN': {
+  zh: {
     short: {
       year: 'numeric', month: 'short', day: 'numeric',
     },

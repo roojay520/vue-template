@@ -36,7 +36,7 @@ export default {
         type: 'warning',
       })
         .then(() => {
-          this.$i18n.locale = this.$i18n.locale === 'en' ? 'zh-CN' : 'en';
+          this.$i18n.locale = this.$i18n.locale === 'en' ? 'zh' : 'en';
           this.$message({
             type: 'success',
             message: this.$t('message.hello'),

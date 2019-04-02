@@ -4,6 +4,6 @@ import cn from './zh/index';
 import en from './en/index';
 
 export default {
-  'zh-CN': { ...cn, ...zhLocale },
+  zh: { ...cn, ...zhLocale },
   en: { ...en, ...enLocale },
 };

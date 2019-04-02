@@ -38,12 +38,17 @@ module.exports = {
           // 去掉 size limit(244kb) 警告
           hints: false,
         },
-
         optimization: {
           // 代码拆分
           splitChunks: {
-            minSize: 50000,
-            maxSize: 250000,
+            chunks: 'all',
+            minSize: 30000,
+            maxSize: 300000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
           },
         },
         plugins: [

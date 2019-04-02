@@ -34,14 +34,6 @@ npm run et:var
 
 生成的变量文件路径为：`./src/libs/elementui/themes/var.scss`
 
-### 打包自定义主题(监听模式)
-
-```bash
-npm run et:watch [name]
-```
-
-name: 自定义主题名称, 默认为 `default`;
-
 ### 打包自定义主题
 
 ```bash
@@ -59,7 +51,7 @@ npm run et:build [name]
       'component',
       {
         libraryName: 'element-ui',
-        // 自定义主题文件路径, 更换主题时需要调整此处
+        // 自定义主题文件路径, 更换主题时需要调整此处的[name]为主题名称
         styleLibraryName: '~src/libs/elementui/themes/[name]',
       },
     ],
